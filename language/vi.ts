@@ -5,7 +5,7 @@ const vi: typeof en = {
 		home: "Trang chủ",
 		info: "Thông tin cá nhân",
 		projects: "Dự án",
-		"get-in-touch": "Liên hệ",
+		contact: "Liên hệ",
 	},
 };
 

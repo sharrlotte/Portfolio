@@ -5,20 +5,45 @@ import { AnimatePresence } from "motion/react";
 import Link from "next/link";
 import React from "react";
 
+const paths: {
+	path: string;
+	label: keyof typeof en.tabs;
+	regex: string;
+}[] = [
+	{
+		path: "/",
+		label: "home",
+		regex: "^/$",
+	},
+	{
+		path: "/projects",
+		label: "projects",
+		regex: "^/projects/?$",
+	},
+	{
+		path: "/info",
+		label: "info",
+		regex: "^/info/?$",
+	},
+	{
+		path: "/contact",
+		label: "contact",
+		regex: "^/contact/?$",
+	},
+];
+
 export default async function NavBar({ language }: { language: Language }) {
 	const translation = await getTranslation(language);
 
 	return (
-		<div className="bg-white/10 backdrop-blur-sm rounded-full py-4 px-8 flex justify-center items-center mx-auto mt-10 w-fit">
-			<AnimatePresence>
-				<nav className="space-x-8 text-lg text-foreground/80">
-					{(Object.keys(en.tabs) as unknown as (keyof typeof en.tabs)[]).map((tab) => (
-						<Link key={tab} href={`/${language}/${tab}`}>
-							{translation.tabs[tab]}
-						</Link>
-					))}
-				</nav>
-			</AnimatePresence>
-		</div>
+		<AnimatePresence>
+			<nav className="bg-transparent z-50 backdrop-blur-sm border rounded-full py-4 px-8 flex justify-center items-center mx-auto mt-10 w-fit space-x-8 text-lg text-foreground/80">
+				{paths.map(({ path, regex, label }) => (
+					<Link key={path} href={`/${language}/${path}`}>
+						{translation.tabs[label]}
+					</Link>
+				))}
+			</nav>
+		</AnimatePresence>
 	);
 }
