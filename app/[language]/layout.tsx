@@ -7,7 +7,7 @@ import "./../globals.css";
 const font = localFont({
 	src: [
 		{
-			path: "./Helvetica.ttf",
+			path: "./helvetica.ttf",
 			style: "normal",
 			weight: "700",
 		},
