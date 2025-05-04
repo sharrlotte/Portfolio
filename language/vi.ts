@@ -8,3 +8,5 @@ const vi: typeof en = {
 		"get-in-touch": "Liên hệ",
 	},
 };
+
+export default vi;
