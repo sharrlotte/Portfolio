@@ -12,7 +12,7 @@ export default async function Page({ params }: { params: Promise<{ language: Lan
 		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base p-4">
 			<NavBar language={language} />
 			<Background />
-			<div className="max-w-2xl m-auto p-6 rounded-xl shadow-lg mt-8 space-y-6 border backdrop-blur-sm text-white">
+			<div className="max-w-full md:max-w-2xl m-auto p-6 rounded-xl shadow-lg mt-8 space-y-6 border backdrop-blur-sm text-white">
 				<h2 className="text-2xl font-semibold border-b pb-2">{translation.tabs.contact}</h2>
 				<ContactLink href={`mailto:${links.email}`}>
 					<MailIcon /> Email: {links.email}
@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: Promise<{ language: Lan
 					Github: {links.github}
 				</ContactLink>
 				<ContactLink href={links.linkedin}>
-					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 min-w-5" fill="currentColor" viewBox="0 0 24 24">
 						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.845-1.563 3.043 0 3.604 2.003 3.604 4.609v5.587z" />
 					</svg>
 					LinkedIn: <span className="line-clamp-1 text-nowrap overflow-hidden">{links.linkedin}</span>
@@ -40,7 +40,7 @@ export default async function Page({ params }: { params: Promise<{ language: Lan
 
 function ContactLink({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
-		<a href={href} className="flex gap-1 items-center">
+		<a href={href} className="flex gap-2 items-center text-center">
 			{children}
 		</a>
 	);

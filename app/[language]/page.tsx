@@ -13,8 +13,8 @@ export default async function Home({ params }: { params: Promise<{ language: Lan
 		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base p-4">
 			<Background />
 			<NavBar language={language} />
-			<main className="flex flex-1 flex-col items-center justify-center text-center relative z-10">
-				<p className="text-gray-300 tracking-widest font-semibold mb-2 mt-24 text-sm md:text-base">
+			<main className="flex flex-1 flex-col items-center justify-center mt-12 md:mt-24 text-center relative z-10">
+				<p className="text-gray-300 tracking-widest font-semibold mb-2 text-sm md:text-base">
 					<span className="inline-flex items-center gap-1">
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path
