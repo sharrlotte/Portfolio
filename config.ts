@@ -34,3 +34,13 @@ export const technologies = {
 } as const;
 
 export type Tech = keyof typeof technologies;
+
+
+export const projects = [
+	{
+		name: "MindustryTool",
+		liveUrl: "https://mindustry-tool.com",
+		githubUrl: "https://github.com/sharrlotte/MindustryToolNext",
+		
+	},
+] as const;

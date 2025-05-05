@@ -16,7 +16,7 @@ const en = {
 			downloadCv: "Download Resume",
 			seeProjects: "See Projects",
 		},
-		tech: "Technologies"
+		tech: "Technologies",
 	},
 	info: {
 		birthday: "Birthday",
@@ -34,7 +34,6 @@ const en = {
 			gpa: "GPA",
 		},
 	},
-
 };
 
 export default en;
