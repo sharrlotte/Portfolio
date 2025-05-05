@@ -9,8 +9,8 @@ export default function NavLink({ children, regex }: { children: React.ReactNode
 
 	return (
 		<span
-			className={cn("hover:underline focus:underline", {
-				underline: match,
+			className={cn("hover:underline focus:underline hover:text-white", {
+				"underline text-white": match,
 			})}
 		>
 			{children}

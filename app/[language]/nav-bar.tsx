@@ -38,7 +38,7 @@ export default async function NavBar({ language }: { language: Language }) {
 
 	return (
 		<AnimatePresence>
-			<nav className="bg-transparent z-50 backdrop-blur-sm border rounded-full py-4 px-8 flex justify-center items-center mx-auto mt-10 w-fit space-x-8 text-lg text-foreground/80">
+			<nav className="bg-transparent z-50 backdrop-blur-sm border rounded-full py-4 px-8 flex justify-center items-center mx-auto mt-10 w-fit space-x-8 text-lg text-foreground/70">
 				{paths.map(({ path, regex, label }) => (
 					<NavLink key={path} regex={regex}>
 						<Link href={`/${language}/${path}`}>{translation.tabs[label]}</Link>

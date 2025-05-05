@@ -19,6 +19,23 @@ const vi: Translation = {
 			seeProjects: "Xem dự án",
 		},
 	},
+	info: {
+		address: "Địa chỉ",
+		phone: "Số điện thoại",
+		email: "Email",
+		sex: "Giới tính",
+		birthday: "Ngày sinh",
+		education: "Học vấn",
+		careerObjective: "Mục tiêu nghề nghiệp",
+		careerObjectiveDescription:
+			"Hiện tại, em đang nỗ lực học hỏi và tích lũy kinh nghiệm để trở thành một Backend Web Developer vững vàng, đồng thời hướng đến mục tiêu dài hạn là vị trí Senior Full Stack Web Developer.",
+		university: {
+			name: "Đại học Hutech",
+			major: "Năm 4, khoa Công nghệ thông tin, chuyên ngành Công nghệ phần mềm",
+			period: "08/2021 - 04/2025",
+			gpa: "GPA",
+		},
+	},
 };
 
 export default vi;

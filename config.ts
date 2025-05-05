@@ -7,6 +7,7 @@ export const links = {
 	linkedin: "https://www.linkedin.com/in/nguy%E1%BB%85n-nh%C6%A1n-h%E1%BA%ADu-737402343/",
 	email: "nguyennhonhau25052003@gmail.com",
 	cv: "https://docs.google.com/document/d/1CZCC3ytnnShHFpb1gCsIlANcej5iLtZMXyqj4FBfiwQ/edit?usp=sharing",
+	phone: "0329239577",
 };
 
 export const technologies = {

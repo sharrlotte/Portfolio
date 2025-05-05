@@ -34,7 +34,7 @@ export default async function RootLayout({
 
 	return (
 		<html className="dark font-sans" lang={language}>
-			<body className={`${font.className} antialiased min-h-screen`}>{children}</body>
+			<body className={`${font.className} antialiased min-h-screen bg-black`}>{children}</body>
 		</html>
 	);
 }
