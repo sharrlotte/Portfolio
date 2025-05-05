@@ -18,6 +18,7 @@ const vi: Translation = {
 			downloadCv: "Tải xuống CV",
 			seeProjects: "Xem dự án",
 		},
+		tech: "Công nghệ sử dụng",
 	},
 	info: {
 		address: "Địa chỉ",

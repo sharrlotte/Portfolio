@@ -14,14 +14,9 @@ export default function Carousel() {
 				0% { transform: translateX(-20%); }
 				100% { transform: translateX(-30%); }
 			}
-			.carousel-track {
-				display: flex;
-				gap: 1rem;
-				width: max-content;
-			}
 		`}</style>
 			<div
-				className="carousel-track"
+				className="flex gap-3 w-[max-content]"
 				style={{
 					animation: "scroll 20s linear infinite",
 				}}
