@@ -2,8 +2,8 @@ import NavBar from "@/app/[language]/nav-bar";
 import { getTranslation } from "@/app/action";
 import { Language, links } from "@/config";
 import Carousel from "./carousel";
-import { motion } from "motion/react";
 import Background from "@/app/[language]/background";
+import { MailIcon } from "lucide-react";
 
 export default async function Home({ params }: { params: Promise<{ language: Language }> }) {
 	const { language } = await params;
@@ -60,9 +60,7 @@ export default async function Home({ params }: { params: Promise<{ language: Lan
 			<Carousel />
 			<footer className="relative z-10 flex justify-center gap-8 pb-8 mt-auto">
 				<FooterLink href={`mailto:${links.email}`}>
-					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12l-4 4m0 0l-4-4m4 4V4" />
-					</svg>
+					<MailIcon size={24} />
 				</FooterLink>
 				<FooterLink href={links.github}>
 					<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
