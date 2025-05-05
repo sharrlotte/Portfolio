@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: Promise<{ language: Lan
 			<NavBar language={language} />
 			<Background />
 			<div className="max-w-2xl m-auto p-6 rounded-xl shadow-lg mt-8 space-y-6 border backdrop-blur-sm text-white">
-				<h1 className="text-2xl font-semibold">{translation.tabs.contact}</h1>
+				<h2 className="text-2xl font-semibold border-b pb-2">{translation.tabs.contact}</h2>
 				<ContactLink href={`mailto:${links.email}`}>
 					<MailIcon /> Email: {links.email}
 				</ContactLink>

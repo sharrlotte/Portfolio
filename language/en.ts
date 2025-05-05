@@ -33,6 +33,7 @@ const en = {
 			gpa: "GPA",
 		},
 	},
+	
 };
 
 export default en;
