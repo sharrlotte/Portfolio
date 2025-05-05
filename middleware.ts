@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
 	const pathnameIsMissingLocale = languages.every((locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`);
 
 	if (pathnameIsMissingLocale) {
-		const locale = request.nextUrl.locale || "en";
+		const locale = request.nextUrl.locale || "vi";
 		return Response.redirect(new URL(`/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`, request.url));
 	}
 

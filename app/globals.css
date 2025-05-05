@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import "tw-animate-css";
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,4 +119,22 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+}
+
+@layer utilities {
+	@keyframes border {
+		to {
+			--border-angle: 360deg;
+		}
+	}
+
+	.animate-border {
+		animation: border 4s linear infinite;
+	}
+}
+
+@property --border-angle {
+	inherits: false;
+	initial-value: 0deg;
+	syntax: "<angle>";
 }

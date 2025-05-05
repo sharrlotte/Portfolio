@@ -1,6 +1,6 @@
 import { languages } from "@/config";
-import en from "@/language/en";
+import en, { Translation } from "@/language/en";
 
-export async function getTranslation(language: (typeof languages)[number]) {
+export async function getTranslation(language: (typeof languages)[number]): Promise<Translation> {
 	return await import(`@/language/${language}`).then((module) => module.default as typeof en);
 }
