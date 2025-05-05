@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: Promise<{ language: Lan
 	const translation = await getTranslation(language);
 
 	return (
-		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base">
+		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base p-4">
 			<NavBar language={language} />
 			<Background />
 			<div className="max-w-2xl m-auto p-6 rounded-xl shadow-lg mt-8 space-y-10 border backdrop-blur-sm">
@@ -17,6 +17,7 @@ export default async function Page({ params }: { params: Promise<{ language: Lan
 					<h2 className="text-2xl font-bold flex items-center gap-2 text-white border-b pb-2">
 						<FaUser className="text-gray-400" /> {translation.tabs.info}
 					</h2>
+					<span className="text-xl">Nguyễn Nhơn Hậu</span>
 					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 						<div className="flex items-center gap-2 text-gray-100">
 							<FaBirthdayCake className="text-gray-400" />

@@ -10,7 +10,7 @@ export default async function Home({ params }: { params: Promise<{ language: Lan
 	const translation = await getTranslation(language);
 
 	return (
-		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base">
+		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base p-4">
 			<Background />
 			<NavBar language={language} />
 			<main className="flex flex-1 flex-col items-center justify-center text-center relative z-10">

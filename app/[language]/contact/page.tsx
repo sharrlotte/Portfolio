@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: Promise<{ language: Lan
 	const translation = await getTranslation(language);
 
 	return (
-		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base">
+		<div className="relative min-h-screen overflow-x-hidden overflow-y-auto flex flex-col text-sm md:text-base p-4">
 			<NavBar language={language} />
 			<Background />
 			<div className="max-w-2xl m-auto p-6 rounded-xl shadow-lg mt-8 space-y-6 border backdrop-blur-sm text-white">
