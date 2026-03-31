@@ -21,7 +21,7 @@ export default async function Home({ params }: { params: Promise<{ language: str
 			<NavBar language={lang} />
 			<HomeSection translation={translation} />
 			<InfoSection translation={translation} />
-			<ProjectsSection />
+			<ProjectsSection translation={translation} />
 			<ContactSection />
 		</div>
 	);

@@ -5,7 +5,9 @@ import { projects } from "@/config";
 import { LoaderIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-export default function ProjectsSection() {
+import { Translation } from "@/language/en";
+
+export default function ProjectsSection({ translation }: { translation: Translation }) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const [hasEnteredViewport, setHasEnteredViewport] = useState(false);
 
@@ -42,7 +44,7 @@ export default function ProjectsSection() {
 						className="snap-start min-h-screen relative z-10 flex flex-col justify-center"
 					>
 						{hasEnteredViewport ? (
-							<ProjectComponent />
+							<ProjectComponent translation={translation} />
 						) : (
 							<div className="flex items-center justify-center w-full h-full">
 								<LoaderIcon className="size-8 animate-spin" />

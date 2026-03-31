@@ -27,6 +27,18 @@ const en = {
 		careerObjectiveDescription:
 			"Currently, I am striving to learn and gain experience to become a solid Backend Web Developer, while aiming for the long-term goal of a Senior Full Stack Web Developer position.",
 	},
+	projects: {
+		mindustryTool: {
+			architecture: "Architecture",
+			architectureDescription: "Interactive map of the project's infrastructure. Click on any service container to view its details.",
+			ownSoftware: "Own Software",
+			openSource: "Open Source",
+			description: "Description",
+			techStack: "Tech Stack",
+			linksAndStats: "Links & Stats",
+			githubStars: "GitHub Stars"
+		}
+	}
 };
 
 export default en;

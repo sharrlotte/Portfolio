@@ -29,6 +29,18 @@ const vi: Translation = {
 		careerObjectiveDescription:
 			"Hiện tại, em đang nỗ lực học hỏi và tích lũy kinh nghiệm để trở thành một Backend Web Developer vững vàng, đồng thời hướng đến mục tiêu dài hạn là vị trí Senior Full Stack Web Developer.",
 	},
+	projects: {
+		mindustryTool: {
+			architecture: "Kiến trúc",
+			architectureDescription: "Bản đồ tương tác của cơ sở hạ tầng dự án. Nhấp vào bất kỳ container dịch vụ nào để xem chi tiết.",
+			ownSoftware: "Phần mềm tự viết",
+			openSource: "Mã nguồn mở",
+			description: "Mô tả",
+			techStack: "Công nghệ",
+			linksAndStats: "Liên kết & Thống kê",
+			githubStars: "Số sao GitHub"
+		}
+	}
 };
 
 export default vi;
