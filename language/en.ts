@@ -24,7 +24,8 @@ const en = {
 		address: "Address",
 		email: "Email",
 		careerObjective: "Career objective",
-		careerObjectiveDescription: "Career objective",
+		careerObjectiveDescription:
+			"Currently, I am striving to learn and gain experience to become a solid Backend Web Developer, while aiming for the long-term goal of a Senior Full Stack Web Developer position.",
 	},
 };
 

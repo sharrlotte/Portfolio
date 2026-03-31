@@ -4,8 +4,11 @@ import { Translation } from "@/language/en";
 
 export default function InfoSection({ translation }: { translation: Translation }) {
 	return (
-		<section id="info" className="snap-start min-h-[100dvh] relative z-10 p-4 pt-24 flex flex-col justify-center">
-			<div className="max-w-3xl w-full mx-auto p-6 rounded-xl shadow-lg space-y-10 border backdrop-blur-sm">
+		<section
+			id="info"
+			className="snap-start min-h-[100dvh] relative z-10 p-4 pt-24 flex flex-col justify-center"
+		>
+			<div className="max-w-3xl w-full mx-auto p-6 shadow-lg space-y-10 backdrop-blur-sm border border-white/10 rounded-xl">
 				<section className="flex flex-col gap-4">
 					<h2 className="text-2xl font-bold flex items-center gap-2 text-white border-b pb-2">
 						<span className="text-2xl font-bold">Nguyễn Nhơn Hậu</span>
@@ -35,7 +38,7 @@ export default function InfoSection({ translation }: { translation: Translation 
 					<h2 className="text-2xl font-bold flex items-center gap-2 text-white border-b border-[#23262F] pb-2">
 						<BullseyeIcon className="text-gray-400" /> {translation.info.careerObjective}
 					</h2>
-					<p className="text-gray-300 text-base bg-[#23262F]/20 rounded-lg p-4">{translation.info.careerObjectiveDescription}</p>
+					<p className="text-gray-300 text-base">{translation.info.careerObjectiveDescription}</p>
 				</section>
 				<section className="space-y-4 text-gray-100">
 					<h2 className="text-2xl font-bold flex items-center gap-2 text-white border-b border-[#23262F] pb-2">
