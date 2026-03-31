@@ -33,15 +33,6 @@ export const technologies = {
 
 export type Tech = keyof typeof technologies;
 
-export type ProjectMeta = {
-	slug: string;
-	name: string;
-	summary: string;
-	liveUrl: string;
-	githubUrl: string;
-	tech: readonly Tech[];
-};
-
 export const projects = [
 	{
 		slug: "mindustry-tool",
@@ -51,7 +42,4 @@ export const projects = [
 		githubUrl: "https://github.com/sharrlotte/MindustryToolNext",
 		tech: ["NextJs", "ReactJs", "TypeScript", "TailwindCss"],
 	},
-] as const satisfies readonly ProjectMeta[];
-
-export type Project = (typeof projects)[number];
-export type ProjectSlug = Project["slug"];
+];

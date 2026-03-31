@@ -1,14 +1,13 @@
 "use client";
 
-import { Project, ProjectSlug } from "@/config";
+import { LoaderIcon } from "@/icons";
 import dynamic from "next/dynamic";
-import { ProjectLoadingSpinner } from "./project-shell";
 
-type ProjectComponent = React.ComponentType<{ project: Project }>;
+type ProjectComponent = React.ComponentType<{}>;
 
-export const projectRegistry: Record<ProjectSlug, ProjectComponent> = {
+export const projectRegistry: Record<string, ProjectComponent> = {
 	"mindustry-tool": dynamic(() => import("./mindustry-tool"), {
 		ssr: false,
-		loading: () => <ProjectLoadingSpinner name="MindustryTool" />,
+		loading: () => <LoaderIcon />,
 	}),
 };

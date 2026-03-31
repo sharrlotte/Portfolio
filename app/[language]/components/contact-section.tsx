@@ -1,4 +1,4 @@
-import { GithubIcon, LinkedInIcon, MailIcon } from "./icons";
+import { GithubIcon, LinkedInIcon, MailIcon } from "../../../icons";
 import { links } from "@/config";
 
 export default function ContactSection() {

@@ -1,9 +1,9 @@
 "use client";
 
+import { projectRegistry } from "@/app/[language]/projects/registry";
 import { projects } from "@/config";
+import { LoaderIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { ProjectLoadingSpinner } from "./projects/project-shell";
-import { projectRegistry } from "./projects/registry";
 
 export default function ProjectsSection() {
 	const sectionRef = useRef<HTMLElement>(null);
@@ -42,12 +42,12 @@ export default function ProjectsSection() {
 				<div className="flex flex-col gap-6 items-center">
 					{projects.map((project) => {
 						if (!hasEnteredViewport) {
-							return <ProjectLoadingSpinner key={project.slug} name={project.name} />;
+							return <LoaderIcon key={project.slug} className="size-8 animate-spin" />;
 						}
 
 						const ProjectComponent = projectRegistry[project.slug];
 
-						return <ProjectComponent key={project.slug} project={project} />;
+						return <ProjectComponent key={project.slug} />;
 					})}
 				</div>
 			</div>

@@ -1,6 +1,6 @@
-import { LocationIcon, DownloadIcon } from "./icons";
+import { LocationIcon, DownloadIcon } from "../../../icons";
 import { links } from "@/config";
-import Carousel from "./components/carousel";
+import Carousel from "./carousel";
 import { Translation } from "@/language/en";
 
 export default function HomeSection({ translation }: { translation: Translation }) {

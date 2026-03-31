@@ -1,4 +1,4 @@
-import { GithubIcon, LinkedInIcon, MailIcon, PhoneIcon, BirthdayCakeIcon, MapMarkerAltIcon, UserIcon, BullseyeIcon } from "./icons";
+import { GithubIcon, LinkedInIcon, MailIcon, PhoneIcon, BirthdayCakeIcon, MapMarkerAltIcon, UserIcon, BullseyeIcon } from "../../../icons";
 import { links } from "@/config";
 import { Translation } from "@/language/en";
 
