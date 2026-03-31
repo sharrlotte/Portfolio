@@ -1,25 +1,15 @@
-import {
-	GithubIcon,
-	LinkedInIcon,
-	MailIcon,
-	PhoneIcon,
-	BirthdayCakeIcon,
-	MapMarkerAltIcon,
-	UserIcon,
-	BullseyeIcon,
-} from "./icons";
+import { GithubIcon, LinkedInIcon, MailIcon, PhoneIcon, BirthdayCakeIcon, MapMarkerAltIcon, UserIcon, BullseyeIcon } from "./icons";
 import { links } from "@/config";
 import { Translation } from "@/language/en";
 
 export default function InfoSection({ translation }: { translation: Translation }) {
 	return (
 		<section id="info" className="snap-start min-h-[100dvh] relative z-10 p-4 pt-24 flex flex-col justify-center">
-			<div className="max-w-2xl w-full mx-auto p-6 rounded-xl shadow-lg space-y-10 border backdrop-blur-sm">
+			<div className="max-w-3xl w-full mx-auto p-6 rounded-xl shadow-lg space-y-10 border backdrop-blur-sm">
 				<section className="flex flex-col gap-4">
 					<h2 className="text-2xl font-bold flex items-center gap-2 text-white border-b pb-2">
-						<UserIcon className="text-gray-400" /> {translation.tabs.info}
+						<span className="text-2xl font-bold">Nguyễn Nhơn Hậu</span>
 					</h2>
-					<span className="text-xl">Nguyễn Nhơn Hậu</span>
 					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 						<div className="flex items-center gap-2 text-gray-100">
 							<BirthdayCakeIcon className="text-gray-400" />
