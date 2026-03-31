@@ -22,10 +22,6 @@ const paths: {
 		path: "#projects",
 		label: "projects",
 	},
-	{
-		path: "#contact",
-		label: "contact",
-	},
 ];
 
 export default async function NavBar({ language }: { language: Language }) {

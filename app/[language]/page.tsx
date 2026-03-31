@@ -105,9 +105,33 @@ export default async function Home({ params }: { params: Promise<{ language: str
 						</h2>
 						<p className="text-gray-300 text-base bg-[#23262F]/20 rounded-lg p-4">{translation.info.careerObjectiveDescription}</p>
 					</section>
+					<section className="space-y-4 text-gray-100">
+						<h2 className="text-2xl font-bold flex items-center gap-2 text-white border-b border-[#23262F] pb-2">
+							<MailIcon className="text-gray-400" /> {translation.tabs.contact}
+						</h2>
+						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+							<ContactLink href={`mailto:${links.email}`}>
+								<MailIcon className="w-5 h-5 text-gray-400" /> <span className="font-semibold text-gray-300">Email:</span>{" "}
+								{links.email}
+							</ContactLink>
+							<ContactLink href={"tel:" + links.phone}>
+								<PhoneIcon className="w-5 h-5 text-gray-400" />
+								<span className="font-semibold text-gray-300">Phone:</span> {links.phone}
+							</ContactLink>
+							<ContactLink href={links.github}>
+								<GithubIcon className="w-5 h-5 text-gray-400" />
+								<span className="font-semibold text-gray-300">Github:</span> {links.github}
+							</ContactLink>
+							<ContactLink href={links.linkedin}>
+								<LinkedInIcon className="w-5 h-5 text-gray-400" />
+								<span className="font-semibold text-gray-300">LinkedIn:</span>{" "}
+								<span className="line-clamp-1 text-nowrap overflow-hidden">{links.linkedin}</span>
+							</ContactLink>
+						</div>
+					</section>
 				</div>
 			</section>
-            
+
 			<section id="projects" className="snap-start min-h-[100dvh] relative z-10 p-4 pt-24 flex flex-col justify-center">
 				<div className="mx-auto max-w-lg w-full">
 					<div className="flex flex-col gap-4 items-center">
@@ -120,27 +144,8 @@ export default async function Home({ params }: { params: Promise<{ language: str
 				</div>
 			</section>
 
-			<section id="contact" className="snap-start min-h-[100dvh] flex flex-col relative z-10 p-4 pt-24">
-				<div className="max-w-2xl w-full m-auto p-6 rounded-xl shadow-lg space-y-6 border backdrop-blur-sm text-white">
-					<h2 className="text-2xl font-semibold border-b pb-2">{translation.tabs.contact}</h2>
-					<ContactLink href={`mailto:${links.email}`}>
-						<MailIcon className="w-6 h-6 text-gray-400" /> Email: {links.email}
-					</ContactLink>
-					<ContactLink href={"tel:" + links.phone}>
-						<PhoneIcon className="w-6 h-6 text-gray-400" />
-						Phone: {links.phone}
-					</ContactLink>
-					<ContactLink href={links.github}>
-						<GithubIcon className="w-6 h-6 text-gray-400" />
-						Github: {links.github}
-					</ContactLink>
-					<ContactLink href={links.linkedin}>
-						<LinkedInIcon className="w-6 h-6 text-gray-400" />
-						LinkedIn: <span className="line-clamp-1 text-nowrap overflow-hidden">{links.linkedin}</span>
-					</ContactLink>
-				</div>
-
-				<footer className="mt-auto pb-8 flex justify-center gap-8">
+			<section id="contact" className="snap-end relative z-10 p-4 pb-8 mt-12">
+				<footer className="flex justify-center gap-8">
 					<FooterLink href={`mailto:${links.email}`}>
 						<MailIcon className="w-6 h-6 text-gray-400" />
 					</FooterLink>
