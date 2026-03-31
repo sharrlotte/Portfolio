@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import {
 	ReactFlow,
 	Background,
@@ -88,13 +88,7 @@ const ServiceNode = ({ data }: NodeProps<Node<ServiceData>>) => {
 	);
 };
 
-const nodeTypes = {
-	client: ClientNode,
-	region: RegionNode,
-	service: ServiceNode,
-};
-
-// --- INITIAL DATA (Placeholders for Scaffolding) ---
+// --- INITIAL DATA ---
 const getInitialNodes = (t: Translation): Node[] => [
 	// Clients
 	{
@@ -106,88 +100,159 @@ const getInitialNodes = (t: Translation): Node[] => [
 	{
 		id: "client-mod",
 		type: "client",
-		position: { x: 600, y: 50 },
+		position: { x: 700, y: 50 },
 		data: { label: "Game Mod" },
 	},
 
-	// Region A
+	// Regions
 	{
-		id: "region-eu",
+		id: "region-vercel-sg",
 		type: "region",
-		position: { x: 100, y: 250 },
-		style: { width: 400, height: 300 },
-		data: { label: "REGION: EUROPE" },
+		position: { x: 50, y: 250 },
+		style: { width: 320, height: 350 },
+		data: { label: "VERCEL (SINGAPORE)" },
+	},
+	{
+		id: "region-vps-sg",
+		type: "region",
+		position: { x: 400, y: 250 },
+		style: { width: 320, height: 350 },
+		data: { label: "VPS (SINGAPORE)" },
+	},
+	{
+		id: "region-vps-de",
+		type: "region",
+		position: { x: 750, y: 250 },
+		style: { width: 320, height: 350 },
+		data: { label: "VPS (GERMANY)" },
 	},
 
-	// Region B
+	// Services in Vercel SG
 	{
-		id: "region-us",
-		type: "region",
-		position: { x: 550, y: 250 },
-		style: { width: 400, height: 300 },
-		data: { label: "REGION: US EAST" },
-	},
-
-	// Services in Region A
-	{
-		id: "svc-api-eu",
+		id: "svc-frontend-vercel",
 		type: "service",
-		parentId: "region-eu",
+		parentId: "region-vercel-sg",
 		extent: "parent",
-		position: { x: 50, y: 50 },
+		position: { x: 40, y: 60 },
 		data: {
-			name: "Main API Gateway",
-			description: "Routes traffic to various internal microservices and handles rate limiting.",
+			name: "Next.js Frontend",
+			description: "Serves the web interface for the Mindustry tool.",
 			isOwn: true,
-			githubLink: "https://github.com/yourusername/api-gateway",
-			stars: 42,
-			liveLink: "https://api.yourdomain.com",
-			techStack: ["Node.js", "Express", "Redis"],
+			techStack: ["Next.js", "React", "Tailwind"],
 			translation: t,
 		},
 	},
 	{
-		id: "svc-db-eu",
+		id: "svc-api-vercel",
 		type: "service",
-		parentId: "region-eu",
+		parentId: "region-vercel-sg",
 		extent: "parent",
-		position: { x: 50, y: 180 },
+		position: { x: 40, y: 200 },
+		data: {
+			name: "Serverless API",
+			description: "API routes handling web requests and interacting with databases.",
+			isOwn: true,
+			techStack: ["Next.js API", "Vercel"],
+			translation: t,
+		},
+	},
+
+	// Services in VPS SG
+	{
+		id: "svc-game-sg",
+		type: "service",
+		parentId: "region-vps-sg",
+		extent: "parent",
+		position: { x: 40, y: 60 },
+		data: {
+			name: "Game Server Manager (Asia)",
+			description: "Manages active Mindustry game instances in Asia for low latency.",
+			isOwn: true,
+			techStack: ["Node.js", "Docker API"],
+			translation: t,
+		},
+	},
+	{
+		id: "svc-redis-sg",
+		type: "service",
+		parentId: "region-vps-sg",
+		extent: "parent",
+		position: { x: 40, y: 200 },
+		data: {
+			name: "Redis Cache",
+			description: "Fast in-memory store for real-time game state and session data.",
+			isOwn: false,
+			techStack: ["Redis", "Docker"],
+			translation: t,
+		},
+	},
+
+	// Services in VPS DE
+	{
+		id: "svc-game-de",
+		type: "service",
+		parentId: "region-vps-de",
+		extent: "parent",
+		position: { x: 40, y: 60 },
+		data: {
+			name: "Game Server Manager (EU)",
+			description: "Manages active Mindustry game instances in Europe.",
+			isOwn: true,
+			techStack: ["Node.js", "Docker API"],
+			translation: t,
+		},
+	},
+	{
+		id: "svc-db-de",
+		type: "service",
+		parentId: "region-vps-de",
+		extent: "parent",
+		position: { x: 40, y: 200 },
 		data: {
 			name: "PostgreSQL Database",
-			description: "Primary relational database for user data and game statistics.",
+			description: "Primary database storing user profiles, maps, and long-term statistics.",
 			isOwn: false,
 			techStack: ["PostgreSQL", "Docker"],
-			translation: t,
-		},
-	},
-
-	// Services in Region B
-	{
-		id: "svc-game-us",
-		type: "service",
-		parentId: "region-us",
-		extent: "parent",
-		position: { x: 100, y: 100 },
-		data: {
-			name: "Game Server Manager",
-			description: "Orchestrates game server instances and handles matchmaking.",
-			isOwn: true,
-			githubLink: "https://github.com/yourusername/game-manager",
-			stars: 128,
-			techStack: ["Go", "Docker API", "gRPC"],
 			translation: t,
 		},
 	},
 ];
 
 const initialEdges: Edge[] = [
-	{ id: "e-web-api", source: "client-web", target: "svc-api-eu", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
-	{ id: "e-mod-game", source: "client-mod", target: "svc-game-us", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
-	{ id: "e-api-db", source: "svc-api-eu", target: "svc-db-eu", style: { stroke: "#10b981", strokeWidth: 2 } },
+	// Web Client -> Vercel
+	{
+		id: "e-web-frontend",
+		source: "client-web",
+		target: "svc-frontend-vercel",
+		animated: true,
+		style: { stroke: "#3b82f6", strokeWidth: 2 },
+	},
+	{ id: "e-frontend-api", source: "svc-frontend-vercel", target: "svc-api-vercel", style: { stroke: "#10b981", strokeWidth: 2 } },
+
+	// Mod -> Game Servers
+	{ id: "e-mod-game-sg", source: "client-mod", target: "svc-game-sg", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
+	{ id: "e-mod-game-de", source: "client-mod", target: "svc-game-de", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 } },
+
+	// API -> Redis & DB
+	{ id: "e-api-redis", source: "svc-api-vercel", target: "svc-redis-sg", style: { stroke: "#10b981", strokeWidth: 2 } },
+	{ id: "e-api-db", source: "svc-api-vercel", target: "svc-db-de", style: { stroke: "#10b981", strokeWidth: 2 } },
+
+	// Game Servers -> DB
+	{ id: "e-game-sg-db", source: "svc-game-sg", target: "svc-db-de", style: { stroke: "#10b981", strokeWidth: 2, opacity: 0.5 } },
+	{ id: "e-game-de-db", source: "svc-game-de", target: "svc-db-de", style: { stroke: "#10b981", strokeWidth: 2 } },
 ];
 
 // --- MAIN COMPONENT ---
 export default function MindustryToolProject({ translation }: { translation: Translation }) {
+	const nodeTypes = useMemo(
+		() => ({
+			client: ClientNode,
+			region: RegionNode,
+			service: ServiceNode,
+		}),
+		[],
+	);
+
 	const [nodes, setNodes, onNodesChange] = useNodesState(getInitialNodes(translation));
 	const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 	const [selectedService, setSelectedService] = useState<ServiceData | null>(null);
