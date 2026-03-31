@@ -11,8 +11,7 @@ const vi: Translation = {
 		hero: {
 			location: "Sống tại Thủ Đức, TP. Hồ Chí Minh",
 			title: "Lập trình viên Backend",
-			description:
-				"Xin chào, tôi là Nguyễn Nhơn Hậu. Một lập trình viên Backend, đang khám phá các công nghệ frontend để để trở thành một lập trình viên Full-Stack.",
+			description: "Xin chào, tôi là Nguyễn Nhơn Hậu. Một lập trình viên Backend",
 		},
 		button: {
 			downloadCv: "Tải xuống CV",

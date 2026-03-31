@@ -9,8 +9,7 @@ const en = {
 		hero: {
 			location: "Live In Ho Chi Minh, Vietnam",
 			title: "Backend Developer",
-			description:
-				"Hi, I'm Nguyen Nhon Hau. A dedicated backend developer, exploring frontend technologies to build robust, full-stack websites.",
+			description: "Hi, I'm Nguyen Nhon Hau. A dedicated backend developer",
 		},
 		button: {
 			downloadCv: "Download Resume",

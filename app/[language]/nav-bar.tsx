@@ -9,27 +9,22 @@ import React from "react";
 const paths: {
 	path: string;
 	label: keyof typeof en.tabs;
-	regex: string;
 }[] = [
 	{
-		path: "/",
+		path: "#home",
 		label: "home",
-		regex: "^/(en|vi)$",
 	},
 	{
-		path: "/projects",
-		label: "projects",
-		regex: "^/(en|vi)/projects/?$",
-	},
-	{
-		path: "/info",
+		path: "#info",
 		label: "info",
-		regex: "^/(en|vi)/info/?$",
 	},
 	{
-		path: "/contact",
+		path: "#projects",
+		label: "projects",
+	},
+	{
+		path: "#contact",
 		label: "contact",
-		regex: "^/(en|vi)/contact/?$",
 	},
 ];
 
@@ -38,10 +33,10 @@ export default async function NavBar({ language }: { language: Language }) {
 
 	return (
 		<AnimatePresence>
-			<nav className="bg-transparent z-50 backdrop-blur-sm border rounded-full py-4 px-8 flex justify-center items-center mx-auto mt-10 w-fit space-x-8 text-lg text-foreground/70">
-				{paths.map(({ path, regex, label }) => (
-					<NavLink key={path} regex={regex}>
-						<Link href={`/${language}/${path}`}>{translation.tabs[label]}</Link>
+			<nav className="bg-transparent z-50 backdrop-blur-sm border rounded-full py-4 px-8 flex justify-center items-center mx-auto w-fit space-x-8 text-lg text-foreground/70 fixed top-10 left-1/2 -translate-x-1/2">
+				{paths.map(({ path, label }) => (
+					<NavLink key={path} href={path}>
+						{translation.tabs[label]}
 					</NavLink>
 				))}
 			</nav>
