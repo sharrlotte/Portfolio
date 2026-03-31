@@ -25,13 +25,6 @@ const en = {
 		email: "Email",
 		careerObjective: "Career objective",
 		careerObjectiveDescription: "Career objective",
-		education: "Education",
-		university: {
-			name: "Hutech",
-			period: "08/2021 - 04/2025",
-			major: "Last year, IT, Software Engineer",
-			gpa: "GPA",
-		},
 	},
 };
 
