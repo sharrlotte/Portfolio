@@ -1,11 +1,11 @@
-import NavBar from "@/app/[language]/nav-bar";
+import NavBar from "@/app/[language]/components/nav-bar";
 import { getTranslation } from "@/app/action";
 import { Language } from "@/config";
-import Background from "@/app/[language]/background";
-import HomeSection from "./home-section";
-import InfoSection from "./info-section";
-import ProjectsSection from "./projects-section";
-import ContactSection from "./contact-section";
+import Background from "@/app/[language]/components/background";
+import HomeSection from "./components/home-section";
+import InfoSection from "./components/info-section";
+import ProjectsSection from "./components/projects-section";
+import ContactSection from "./components/contact-section";
 
 export default async function Home({ params }: { params: Promise<{ language: string }> }) {
 	const { language } = await params;

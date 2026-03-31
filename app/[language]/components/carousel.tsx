@@ -1,5 +1,5 @@
 "use client";
-import TechBadge from "@/app/[language]/tech-badge";
+import TechBadge from "@/app/[language]/components/tech-badge";
 import { Tech, technologies } from "@/config";
 import { motion, useAnimationFrame, useMotionValue, wrap } from "motion/react";
 import { useRef, useState, useEffect } from "react";

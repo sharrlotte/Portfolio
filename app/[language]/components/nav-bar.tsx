@@ -1,4 +1,4 @@
-import NavLink from "@/app/[language]/nav-link";
+import NavLink from "@/app/[language]/components/nav-link";
 import { getTranslation } from "@/app/action";
 import { Language } from "@/config";
 import en from "@/language/en";

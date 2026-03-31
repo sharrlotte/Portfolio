@@ -1,18 +1,10 @@
 "use client";
 
-import { GithubIcon } from "@/app/[language]/icons";
-import TechBadge from "@/app/[language]/tech-badge";
+import { GithubIcon } from "@/app/[language]/components/icons";
+import TechBadge from "@/app/[language]/components/tech-badge";
 import { Project } from "@/config";
 
-export function ProjectShell({
-	project,
-	eyebrow,
-	children,
-}: {
-	project: Project;
-	eyebrow: string;
-	children: React.ReactNode;
-}) {
+export function ProjectShell({ project, eyebrow, children }: { project: Project; eyebrow: string; children: React.ReactNode }) {
 	return (
 		<article className="w-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-2xl shadow-black/20">
 			<div className="flex flex-col gap-6">
